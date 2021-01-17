@@ -110,3 +110,22 @@ function smallestDifference(arrayOne, arrayTwo) {
       }
       return close;
   }
+
+
+  //////////////////////////////// Move element to end /////////////////////////////
+  function moveElementToEnd(array, toMove) {
+	var count = 0;
+	var newArr = [];
+	for(var i = 0; i < array.length; i++){	
+		if (array[i] != toMove){
+			newArr.push(array[i]);
+			}
+	 	else if (array[i] === toMove){
+			count++;
+		}
+	}
+	for (let j = 0; j < count; j++){
+		newArr.push(toMove);
+	}
+	return newArr;
+}
