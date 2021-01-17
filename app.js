@@ -83,3 +83,30 @@ function threeNumberSum(array, targetSum) {
   var arr = [12,3,1,2,-6,5,-8,6];
   var tgt = 0;
   //console.log(threeNumberSum(arr, tgt));
+
+
+///////////////////////////////////////// smallest difference ///////////////////////////////
+
+function smallestDifference(arrayOne, arrayTwo) {
+    // Write your code here.
+      arrayOne.sort((a,b) => a - b);
+      arrayTwo.sort((a,b) => a - b);
+      var match = [];
+      var close = [];
+      for (var i = 0; i < arrayOne.length; i++){
+          for( var j = 0; j < arrayTwo.length; j++){
+              match.push(Math.abs(arrayOne[i] - arrayTwo[j]));
+          }
+      }
+      match.sort((a,b) => a - b);
+      for (var i = 0; i < arrayOne.length; i++){
+          for( var j = 0; j < arrayTwo.length; j++){
+              console.log(`${arrayOne[i]} - ${arrayTwo[j]} = ${arrayOne[i] - arrayTwo[j]}`);
+              if ( Math.abs(arrayOne[i] - arrayTwo[j]) === match[0] ){
+                  close.push(arrayOne[i],arrayTwo[j])
+                  console.log('MATCH')
+              }
+          }
+      }
+      return close;
+  }
