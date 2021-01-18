@@ -129,3 +129,29 @@ function smallestDifference(arrayOne, arrayTwo) {
 	}
 	return newArr;
 }
+
+
+
+///////////////////////////////////// monotonic ////////////////////////
+
+function isMonotonic(array) {
+    // Write your code here.
+      var inc = 0;
+      var dec = 0;
+      for(var i = 0; i < array.length-1; i++){
+          if(array[i] < array[i + 1]){
+              inc++
+          }
+          else if(array[i] === array[i + 1]){
+              inc++;
+              dec++
+          }else if(array[i] > array[i + 1]){
+              dec++
+          }
+      }
+      if(dec >= array.length - 1 || inc >= array.length - 1){
+          return true
+      }else{
+          return false
+      }	
+  }
